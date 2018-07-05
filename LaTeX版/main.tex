@@ -1,0 +1,35 @@
+\documentclass[UTF8]{ctexbook}
+\usepackage[a4paper, left = 3cm, right = 3cm, top = 3cm, bottom = 3cm]{geometry}
+\usepackage{amsmath} % 数学公式
+\usepackage{amssymb}             % 数学公式
+\usepackage{amsfonts}            % 数学字体
+\usepackage{mathrsfs}            % 数学花体
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{framed}
+
+\usepackage{theorem} % 定理
+\theoremheaderfont{\sffamily\bfseries}
+\theorembodyfont{\normalfont}
+
+\definecolor{shadecolor}{gray}{0.85}
+\newcommand{\myref}[1]{\ \ref{#1}\ }
+\newtheorem{thm}{定理}[chapter]
+\newtheorem{lemma}{引理}[chapter]
+\newtheorem{prop}{命题}[chapter]
+\newtheorem{definition}{定义}[chapter]
+\newenvironment{proof}{
+	\begin{shaded}
+		\par\noindent{\sffamily\bfseries 证明}
+}{
+	\hfill\mbox{$\Box$}\end{shaded}
+}
+
+\title{积分变换的相关概念}
+\author{玩味者}
+\begin{document}
+	\maketitle
+	\tableofcontents
+	\include{chap1}
+	\include{chap2}
+\end{document}
