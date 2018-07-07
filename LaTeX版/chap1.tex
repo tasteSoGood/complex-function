@@ -20,6 +20,18 @@
             \label{eq: 1.2}
         \end{equation}
 
+        \begin{proof}
+            以下是欧拉本人的证明思路：假如$e^x$的泰勒展开式在复数域成立，则
+
+            \begin{equation*}
+                \begin{split}
+                    e^{i\theta}&=1+i\theta+\dfrac{(i\theta)^2}{2!}+\dfrac{(i\theta)^3}{3!}+\dfrac{(i\theta)^3}{3!}+\cdots\\
+                    &=(1 - \dfrac{\theta^2}{2!} + \dfrac{\theta^4}{4!} - \cdots) + (i\theta - \dfrac{i\theta^3}{3!} + \dfrac{\theta^5}{5!} - \cdots)\\
+                    &=\cos \theta + i\sin \theta
+                \end{split}
+            \end{equation*}
+        \end{proof}
+
         由\myref{eq: 1.2}式可以很容易推导出
         \begin{equation}
             \cos\theta =\dfrac{e^{i\theta}+e^{-i\theta}}{2}\quad \sin\theta = \dfrac{e^{i\theta}-e^{-i\theta}}{2i}

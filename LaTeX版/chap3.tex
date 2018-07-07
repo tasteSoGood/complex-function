@@ -1,0 +1,55 @@
+\chapter{重温傅里叶级数}
+    在第一章中，我们从傅里叶级数开始推导出傅里叶积分公式以及傅里叶变换。但是，这样的推导在数学上是不完整的。下面试图从另一个更加基础的方面来诠释傅里叶级数理论。
+    \section{从周期性开始}
+        傅里叶级数源于傅里叶的一个简单的想法：\emph{任何}函数都可以表示成一组正弦函数的有限和。当然，从数学分析的角度来说，这样的说法是相当不严谨的，但我们不%
+        妨暂时承认这个假设，看看能够走到多远。
+        假设一个函数$f(t)$可以表示成一串正弦函数的和，那么
+        \begin{equation*}
+            f(t) = \sum_{n = 1}^{N} A_n\sin(2\pi n t + \varphi_n)
+        \end{equation*}
+        但是这个式子很不好看，虽然三个变量可以唯一地决定一个正弦函数，但是在计算的时候，将会遇到很多的障碍（正弦内有加减）。所以，通常将上式变换一下：
+        \begin{equation}
+            \begin{split}
+                A_n\sin(2\pi n t + \varphi_n) &= A_n(\sin(2\pi nt)\cos\varphi_n + \cos(2\pi nt)\sin\varphi_n)\\
+                &= (A_n\cos\varphi_n)\sin(2\pi nt) + (A_n\sin\varphi_n)\cos(2\pi nt)\\
+                &= a_n\cos(2\pi nt) + b_n\sin(2\pi nt)
+            \end{split}
+            \label{eq: 3.1}
+        \end{equation}
+        这里按照习惯，将$\cos(2\pi nt)$放在前面，是无关紧要的。
+
+        但上面的式子有一个不能表示的函数，那就是常函数，所以，可以在这个级数的前面加上一个常数项。至于这个常数项到底是多少，其实是很难判断的。由于$n = 0$时，%
+        \myref{eq: 3.1}的结果是$a_0$，所以暂且将常数项定为$ka_0$（$k$为系数），于是：
+        \begin{equation}
+            f(t) = ka_0 + \sum_{n = 1}^{N} a_n\cos(2\pi nt) + b_n\sin(2\pi nt)
+            \label{eq: 3.2}
+        \end{equation}
+        正如我们在第一章中推导过的，通过欧拉公式的变换，可以将上面的这个级数变成
+        \begin{equation*}
+            \begin{split}
+                f(t) &= ka_0 + \sum_{n = 1}^{N} a_n\cos(2\pi nt) + b_n\sin(2\pi nt)\\
+                &= ka_0 + \sum_{n = 1}^{N} a_n\dfrac{e^{i2\pi nt} + e^{-i2\pi nt}}{2} + b_n\dfrac{e^{i2\pi nt} - e^{-i2\pi nt}}{2i}\\
+                &= ka_0 + \sum_{n = 1}^{N} \frac 1 2 (a_n - ib_n)e^{i2\pi nt} + \frac 1 2 (a_n + ib_n) e^{-i2\pi nt}\\
+                &= ka_0 + \sum_{n = 1}^{N} c_n e^{i2\pi nt} + c_{-n} e^{-i2\pi nt}
+            \end{split}
+        \end{equation*}
+        从上面的推导可以看出，如果$k = \frac 1 2$的话，那将是比较合理的，可以将所有的$c_n$合并起来
+        \begin{equation}
+            f(t) = \sum_{n = -N}^{N} c_n e^{i2\pi nt}
+            \label{eq: 3.3}
+        \end{equation}
+        注意到，$c_n = \overline{c_{-n}}$，$e^{i2\pi nt} = \overline{e^{-i2\pi nt}}$，所以，这个级数是关于实轴对称的。由于共轭复数的和是两倍的实部，%
+        那么，\myref{eq: 3.3}就应该是一个实函数：
+        \begin{equation*}
+            \sum_{n = -N}^{N} c_n e^{i2\pi nt} = c_0 + 2Re\left\{\sum_{n = 1}^{N} c_n e^{i2\pi nt}\right\}
+        \end{equation*}
+        这样就大可放心了，$f(t)$是一个实变函数，经过一个复数的变换还是一个实变函数，不会跑到复数域去。
+
+        \myref{eq: 3.3}的结论是一个优美的结论，但是这一切都源于对一个假设的默认：任何函数都可以表示成一组正弦函数的有限和。既然我们通过这个假设得到%
+        了\myref{eq: 3.3}，那就要对这个假设负责，解决下面两个问题：
+
+        \begin{enumerate}
+            \item $c_k$的值如何构造，是什么？
+            \item $\sum\limits_{n = -N}^{N} c_n e^{i2\pi nt}$真的可以趋近$f(t)$吗？如果可以，它趋近的速度如何？
+        \end{enumerate}
+        在下一节中，我们将重点解决这两个问题。
