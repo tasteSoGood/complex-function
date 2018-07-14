@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6730 64-bit) (preloaded format=pdflatex 2018.7.7)  10 JUL 2018 00:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6730 64-bit) (preloaded format=pdflatex 2018.7.7)  14 JUL 2018 16:16
 entering extended mode
 **f:/MyCode/笔记/复变函数/LaTeX版/main.tex
 (f:/MyCode/笔记/复变函数/LaTeX版/main.tex
@@ -823,7 +823,7 @@ File: UTF8.enc 2015/04/18 4.8.4
 ("C:\Users\David Copperfield\AppData\Roaming\MiKTeX\2.9\tex\latex\cjk\UTF8\UTF8
 .chr"
 File: UTF8.chr 2015/04/18 4.8.4
-) (main.aux (chap1.aux) (chap2.aux) (chap3.aux))
+) (main.aux (chap1.aux) (chap2.aux) (chap3.aux) (chap4.aux))
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
@@ -1068,7 +1068,7 @@ LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <7.52812> not available
 
 ]
 第二章
-<1.png, id=227, 616.3025pt x 381.425pt>
+<1.png, id=228, 616.3025pt x 381.425pt>
 File: 1.png Graphic file (type png)
 <use 1.png>
 Package pdftex.def Info: 1.png  used on input line 31.
@@ -1099,18 +1099,27 @@ Underfull \vbox (badness 1590) has occurred while \output is active []
 
 ]
 第三章
-[21]) [22] (main.aux (chap1.aux) (chap2.aux) (chap3.aux))
+[21]) [22]
+\openout2 = `chap4.aux'.
+
+ (chap4.tex
+第四章
+) [23
+
+
+
+] (main.aux (chap1.aux) (chap2.aux) (chap3.aux) (chap4.aux))
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.65625pt have occurred.
 
  ) 
 Here is how much of TeX's memory you used:
- 18156 strings out of 492973
- 331048 string characters out of 3143843
- 341174 words of memory out of 3000000
- 21354 multiletter control sequences out of 15000+200000
- 612433 words of font info for 326 fonts, out of 3000000 for 9000
+ 18191 strings out of 492973
+ 331609 string characters out of 3143843
+ 341495 words of memory out of 3000000
+ 21377 multiletter control sequences out of 15000+200000
+ 613592 words of font info for 330 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  42i,22n,63p,600b,340s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/s
@@ -1148,40 +1157,40 @@ imsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS
 /WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun
 .ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Font
 s/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simhei.ttf><C:/WIND
-OWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc>
+OWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simsun.ttc>
 <C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/sim
-hei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/F
-onts/simhei.ttf><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/W
+sun.ttc><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/F
+onts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simsun.ttc><C:/W
 INDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.t
 tc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/
 simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOW
-S/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simhei.ttf><C
+S/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C
 :/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhe
 i.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fon
 ts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WIN
 DOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf
-><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/si
+><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/si
 msun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/
 Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/
 WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.
 ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts
-/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><D:/MikTeX/fonts/type1/public/amsfonts
-/cm/cmbx10.pfb><D:/MikTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><D:/MikTeX/
-fonts/type1/public/amsfonts/cm/cmex10.pfb><D:/MikTeX/fonts/type1/public/amsfont
-s/cmextra/cmex8.pfb><D:/MikTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><D:/Mi
-kTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><D:/MikTeX/fonts/type1/public/am
-sfonts/cm/cmmi5.pfb><D:/MikTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><D:/Mik
-TeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><D:/MikTeX/fonts/type1/public/amsf
-onts/cm/cmr12.pfb><D:/MikTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><D:/MikTeX
-/fonts/type1/public/amsfonts/cm/cmr7.pfb><D:/MikTeX/fonts/type1/public/amsfonts
-/cm/cmsl10.pfb><D:/MikTeX/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><D:/MikTe
-X/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/MikTeX/fonts/type1/public/amsfo
-nts/cm/cmsy5.pfb><D:/MikTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><D:/MikTeX
-/fonts/type1/public/amsfonts/symbols/msam10.pfb><D:/MikTeX/fonts/type1/public/r
-sfs/rsfs10.pfb>
-Output written on main.pdf (22 pages, 948119 bytes).
+/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><D:/MikTe
+X/fonts/type1/public/amsfonts/cm/cmbx10.pfb><D:/MikTeX/fonts/type1/public/amsfo
+nts/cm/cmbx12.pfb><D:/MikTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><D:/MikT
+eX/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><D:/MikTeX/fonts/type1/public/
+amsfonts/cm/cmmi10.pfb><D:/MikTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><D:
+/MikTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><D:/MikTeX/fonts/type1/public/
+amsfonts/cm/cmmi7.pfb><D:/MikTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><D:/M
+ikTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><D:/MikTeX/fonts/type1/public/am
+sfonts/cm/cmr5.pfb><D:/MikTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><D:/MikTe
+X/fonts/type1/public/amsfonts/cm/cmsl10.pfb><D:/MikTeX/fonts/type1/public/amsfo
+nts/cm/cmssbx10.pfb><D:/MikTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/Mi
+kTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><D:/MikTeX/fonts/type1/public/ams
+fonts/cm/cmsy7.pfb><D:/MikTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><D
+:/MikTeX/fonts/type1/public/rsfs/rsfs10.pfb>
+Output written on main.pdf (23 pages, 957766 bytes).
 PDF statistics:
- 791 PDF objects out of 1000 (max. 8388607)
+ 798 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  282 words of extra memory for PDF output out of 10000 (max. 10000000)
 

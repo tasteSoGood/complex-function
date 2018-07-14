@@ -16,3 +16,5 @@
 \contentsline {section}{\numberline {2.8}一些思考}{19}
 \contentsline {chapter}{\numberline {第三章\hspace {.3em}}重温傅里叶级数}{21}
 \contentsline {section}{\numberline {3.1}从周期性开始}{21}
+\contentsline {chapter}{\numberline {第四章\hspace {.3em}}快速傅里叶变换}{23}
+\contentsline {section}{\numberline {4.1}离散傅里叶变换}{23}
