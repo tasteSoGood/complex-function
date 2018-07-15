@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6730 64-bit) (preloaded format=pdflatex 2018.7.7)  14 JUL 2018 16:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6730 64-bit) (preloaded format=pdflatex 2018.7.7)  14 JUL 2018 22:37
 entering extended mode
 **f:/MyCode/笔记/复变函数/LaTeX版/main.tex
 (f:/MyCode/笔记/复变函数/LaTeX版/main.tex
@@ -1115,10 +1115,10 @@ LaTeX Font Warning: Size substitutions with differences
 
  ) 
 Here is how much of TeX's memory you used:
- 18191 strings out of 492973
- 331609 string characters out of 3143843
- 341495 words of memory out of 3000000
- 21377 multiletter control sequences out of 15000+200000
+ 18195 strings out of 492973
+ 331651 string characters out of 3143843
+ 341517 words of memory out of 3000000
+ 21381 multiletter control sequences out of 15000+200000
  613592 words of font info for 330 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  42i,22n,63p,600b,340s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1188,7 +1188,7 @@ nts/cm/cmssbx10.pfb><D:/MikTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/Mi
 kTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><D:/MikTeX/fonts/type1/public/ams
 fonts/cm/cmsy7.pfb><D:/MikTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><D
 :/MikTeX/fonts/type1/public/rsfs/rsfs10.pfb>
-Output written on main.pdf (23 pages, 957766 bytes).
+Output written on main.pdf (23 pages, 958708 bytes).
 PDF statistics:
  798 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
