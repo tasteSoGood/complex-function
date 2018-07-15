@@ -18,3 +18,4 @@
 \contentsline {section}{\numberline {3.1}从周期性开始}{21}
 \contentsline {chapter}{\numberline {第四章\hspace {.3em}}快速傅里叶变换}{23}
 \contentsline {section}{\numberline {4.1}离散傅里叶变换}{23}
+\contentsline {section}{\numberline {4.2}从计算机学来看}{24}

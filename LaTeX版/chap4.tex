@@ -3,15 +3,137 @@
     有对傅里叶变换理论产生什么数学上的影响，但是却被视为最重要的算法之一%
     。为了了解这一算法的内容，我们需要先对离散傅里叶变换做一些了解。
     \section{离散傅里叶变换}
-        设输入信号的序列为$\textbf{x} = {x_0, x_1, \cdots, x_{N - 1}}$， 输出信号的序列为$\textbf{X} = {X_0, X_1, \cdots, X_{N - 1}}$，则离散傅里叶变换由下面的式子给出：
+        设输入信号的序列为$\textbf{x} = {x_0, x_1, \cdots, x_{N - 1}}$， 输出信号的序列为$\textbf{X} = {X_0, X_1, \cdots, X_{N - 1}}$，则离散傅里叶变换和离散傅里叶逆变换由下面的式子给出：
         \begin{equation}
             X_k = \sum_{n = 0}^{N - 1} x_n e^{-\frac{2\pi i}{N}kn}
             \label{eq: 4.1}
         \end{equation}
-        初看这个式子并不能得到什么，但是我们先做一个如下的定义：
         \begin{equation}
-            \omega_N^k = e^{-\frac{2\pi i}{N}k}
+            x_k = \dfrac 1 N \sum_{n = 0}^{N - 1} X_n e^{\frac{2\pi i}{N}kn}
             \label{eq: 4.2}
         \end{equation}
-        式\myref{eq: 4.2}被称为单位复根，简单来说，这个复数是$\omega^N = 1$的解，根据代数基本定理，这个解的数量是$N$。
-        
+        注意到，合式后面的这一部分是方程$\omega^N = 1$的解，根据代数基本定理，$n$次复系数多项式方程在复数域中有且只有$n$个根。%
+        所以可以猜测：这个合式中单把后面一部分提出来，其实是有许多相同项的。在对这个想法进行深入之前，需要先对\myref{eq: 4.1}进行化简。%
+        进行这一步的关键是将输入信号和输出信号都视作列向量
+        \begin{equation*}
+            \begin{split}
+                X_k &= \sum_{n = 0}^{N - 1} x_n e^{-\frac{2\pi i}{N}kn}\\
+                &= [e^{-\frac{2\pi i}{N}k\cdot 0}\  e^{-\frac{2\pi i}{N}k\cdot 1}\  \cdots\  e^{-\frac{2\pi i}{N}k\cdot (N - 1)}]
+                \left[\begin{matrix}
+                    x_0\\
+                    x_1\\
+                    \vdots\\
+                    x_{N - 1}
+                \end{matrix}\right]
+            \end{split}
+        \end{equation*}
+        按照上面的化简思路，可以将输出向量表示成如下的形式
+        \begin{equation*}
+            \left[\begin{matrix}
+                X_0\\
+                X_1\\
+                \vdots\\
+                X_{N - 1}
+            \end{matrix}\right] = 
+            \left[\begin{matrix}
+                e^{-\frac{2\pi i}{N}1\cdot 0}& e^{-\frac{2\pi i}{N}1\cdot 1}& \cdots& e^{-\frac{2\pi i}{N}1\cdot (N - 1)}\\
+                e^{-\frac{2\pi i}{N}2\cdot 0}& e^{-\frac{2\pi i}{N}2\cdot 1}& \cdots& e^{-\frac{2\pi i}{N}2\cdot (N - 1)}\\
+                \vdots & \vdots & \ddots & \vdots\\
+                e^{-\frac{2\pi i}{N}(N - 1)\cdot 0}& e^{-\frac{2\pi i}{N}(N - 1)\cdot 1}& \cdots& e^{-\frac{2\pi i}{N}(N - 1)\cdot (N - 1)}\\
+            \end{matrix}\right]
+            \left[\begin{matrix}
+                x_0\\
+                x_1\\
+                \vdots\\
+                x_{N - 1}
+            \end{matrix}\right]
+        \end{equation*}
+        因为傅里叶变换可以转化成这样的矩阵变换的形式，所以这可以用来解释傅里叶变换为什么具有如此多的优良的线性性质。从矩阵的分类上来说，这个矩阵不仅仅是一个%
+        对称矩阵，还是一个范德蒙德矩阵。由于是对称矩阵，所以求离散傅里叶逆变换只需要对矩阵求逆即可（对称矩阵必有逆矩阵）。为了便于表述，我们将上面的式子简记为
+        \begin{equation}
+            \textbf{X} = \Omega\textbf{x}
+            \label{eq: 4.3}
+        \end{equation}
+    \section{从计算机学来看}
+        上一节中得到了离散傅里叶变换的矩阵算子，那么要得到一个离散序列的傅里叶变换结果，很显然需要$\Theta(n^2)$的时间复杂度，如果单单从矩阵乘法的角度来看，%
+        迄今为止最好的算法也不能比这个复杂度低多少，所以要优化这个过程，需要从矩阵内部的结构入手。
+        \begin{definition}
+            \begin{equation}
+                \omega(p, q) = e^{-\frac{2\pi i q}{p}}
+                \label{eq: 4.4}
+            \end{equation}
+        \end{definition}
+        \myref{eq: 4.4}指的是单位复根，这个东西有一些特殊的性质，可以用来导出一个很好的算法
+        \begin{enumerate}
+            \item{相消性质}
+            \begin{equation}
+                \omega(dn, dk) = \omega(n, k)
+                \label{eq: 4.5}
+            \end{equation}
+            \item
+            \begin{equation}
+                \omega(n, \frac n 2) = \omega(2, *) = -1
+                \label{eq: 4.6}
+            \end{equation}
+            \item{折半引理}
+            \begin{equation}
+                \omega(n, 2k) = \omega(\frac n 2, k)
+                \label{eq: 4.7}
+            \end{equation}
+            \item{求和引理}
+            \begin{equation}
+                \sum_{j = 0}^{n - 1} \omega(n, jk) = 0
+                \label{eq: 4.8}
+            \end{equation}
+        \end{enumerate}
+        如果我们将离散傅里叶变换的式子看作对一个多项式的定点求值，定义一个多项式
+        \begin{equation}
+            A(x) = \sum_{j = 0}^{n - 1} a_jx^j
+            \label{eq: 4.9}
+        \end{equation}
+        一个序列的傅里叶变换结果就是\myref{eq: 4.9}中$x = \omega(n, k)$的情况。为了能够使计算变得简单，我们将这个多项式的奇次项和偶次项%
+        分开，可以得到
+        \begin{equation}
+            \begin{split}
+                A(x) &= (a_0 + a_2 x + a_4 x^2 + \cdots + a_{n - 2}x^{\frac n 2 - 1}) + x(a_1 + a_3 x + a_5 x^2 + \cdots + a_{n - 1}x^{\frac n 2 - 1})\\
+                &= A_{even}(x^2) + xA_{odd}(x^2)
+            \end{split} 
+            \label{eq: 4.10}
+        \end{equation}
+        结合\myref{eq: 4.8}可以看到，这个递归式是有一定可行性的，当一个输入序列长度为1的时候，根据\myref{eq: 4.3}输出序列和输入序列一致。%
+        这一个特性又可以做递归算法的基础。所以
+        \begin{equation}
+            \begin{split}
+                &\text{if length(x) = 1}\quad X = x\\
+                &\text{else}\quad X = A_{even}(\omega(n, 2k)) + \omega(n, k)A_{odd}(\omega(n, 2k))
+            \end{split}
+            \label{eq: 4.11}
+        \end{equation}
+        根据\myref{eq: 4.11}可以得到一个递归形式长度的算法，但是要求是这个输入的时间序列长度必须要是$2^n$，才能保证递归的深度是稳定的。%
+        再后面的一个操作就是快速傅里叶算法的亮点了，一个天才的想法，称为\emph{蝴蝶操作}。
+
+        让我们把目光放在某一层递归里面，假设此层中的总长度是2的幂，那么可以将该层平分，而且有：
+        \begin{equation}
+            \begin{split}
+                &X_k = A_{even}(\omega(n, 2k)) + \omega(n, k)A_{odd}(\omega(n, 2k))\\
+                &X_{k + \frac n 2} = A_{even}(\omega(n, 2k)) - \omega(n, k)A_{odd}(\omega(n, 2k))
+            \end{split}
+            \label{eq: 4.12}
+        \end{equation}
+        \begin{proof}
+            \begin{equation*}
+                \begin{split}
+                    A_{even}(\omega(n, 2k)) + \omega(n, k)A_{odd}(\omega(n, 2k)) &= A(\omega(n, k))\\
+                    &= X_k
+                \end{split}
+            \end{equation*}
+            \begin{equation*}
+                \begin{split}
+                    A_{even}(\omega(n, 2k)) - \omega(n, k)A_{odd}(\omega(n, 2k)) &= A_{even}(\omega(n, 2k)) + \omega(n, \frac n 2) \omega(n, k)A_{odd}(\omega(n, 2k))\\
+                    &= A_{even}(\omega(n, 2k + n)) + \omega(n, k + \frac n 2)A_{odd}(\omega(n, 2k + n))\\
+                    &= A(\omega(n, k + \frac n 2))\\
+                    &= X_{k + \frac n 2}
+                \end{split}
+            \end{equation*}
+        \end{proof}
+        以上就是快速傅里叶变换的全部数学推理了，接下来的内容要交给程序去实现。
